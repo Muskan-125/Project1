@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+        background-color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-left: 99px;
+      }
+
+      .logo-img {
+        width: 65px;
+        margin-right: 5px;
+      }
+
+      .logo-text {
+        font-size: 35px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style-type: none;
+        gap: 80px;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
+      }
+
+      .book-now {
+        margin-right: 30px;
+      }
+
+      .book-now-btn {
+        background-color: black;
+        color: white;
+        padding: 20px 50px;
+        text-decoration: none;
+        border-radius: 3px;
+        font-size: 20px;
+      }
+
+      .menu-dots {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 20px;
+      }
+
+      .menu-dots span {
+        width: 5px;
+        height: 5px;
+        background-color: black;
+        border-radius: 50%;
+      }
+
+      .future-office-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 50px 20px;
+      }
+
+      .content-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .content-left h1 {
+        font-size: 150px;
+        font-weight: bold;
+        line-height: 1;
+        margin-left: 90px;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .content-left p {
+        margin-top: 20px;
+        margin-left: 70px;
+        font-size: 18px;
+        color: gray;
+      }
+
+      .stats {
+        display: flex;
+        margin-top: 30px;
+        gap: 40px;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat h2 {
+        font-size: 70px;
+        font-weight: bold;
+        margin-left: 70px;
+      }
+
+      .stat p {
+        font-size: 20px;
+        color: gray;
+      }
+
+      .content-right {
+        width: 45%;
+      }
+
+      .office-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .small-office-img {
+        width: 60%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .explore-link {
+        margin-left: 1000px;
+        font-size: 30px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid black;
+        padding-bottom: 50px;
+      }
+      .lease-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 500px;
+        padding: 50px;
+        margin-top: 150px;
+        background-color: #fff;
+      }
+
+      .lease-left {
+        width: 50%;
+        text-align: center;
+      }
+
+      .lease-left h2 {
+        font-size: 60px;
+        margin-left: 200px;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .lease-right {
+        width: 50%;
+        text-align: left;
+      }
+
+      .lease-right p {
+        font-size: 24px;
+        color: #333;
+        line-height: 2;
+      }
+
+      /* Community Section */
+      .community-section {
+        background-color: #000;
+        color: #fff;
+        padding: 100px 20px; 
+        min-height: 800px; 
+        text-align: center;
+      }
+
+      .community-section h2 {
+        font-size: 100px;
+        font-weight: bold;
+        margin-bottom: 50px;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .community-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .card {
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 0px;
+        width: 25%;
+        min-width: 250px;
+        min-height: 500px;
+        text-align: left;
+        border: 1px solid #e1dede;
+      }
+
+      .card h3 {
+        margin-top: 45px;
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 100px;
+        color: #ccc;
+      }
+
+      .learn-more {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        padding-bottom: 3px;
+      }
+      .features-section {
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+      }
+
+      .feature-block {
+        display: flex;
+        width: 80%; 
+        gap: 150px;
+        margin-bottom: 180px;
+      }
+
+      .feature-column {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      .feature-icon-text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .feature-icon-text img {
+        width: 130px;
+        height: 100px;
+        margin-right: 20px;
+      }
+
+      .feature-icon-text p {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      .vertical-divider {
+        width: 1px;
+        background-color: #ccc;
+        margin: 0 30px;
+      }
+
+      .see-space-section {
+        text-align: center;
+        padding: 180px 20px;
+        margin-left: 625px;
+        margin-right: 625px;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .see-space-section h2 {
+        font-family: "Arial", sans-serif; 
+        font-size: 80px;
+        font-weight: normal;
+        color: #000;
+        margin: 0;
+      }
+
+      /*3rd page*/
+      .custom-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 50px 20px;
+        background-color: #fff;
+      }
+
+      .custom-text {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .custom-text h1 {
+        font-size: 120px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        margin-left: 50px;
+        font-family: "Oswald", sans-serif;;
+      }
+
+      .custom-text p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 2;
+        margin-left: 50px;
+        color: #333;
+      }
+
+      .custom-text .explore-btn {
+        background-color: black;
+        color: white;
+        padding: 15px 40px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .custom-images {
+        width: 55%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .custom-images .custom-img {
+        width: 48%;
+        height: 80vh; /* Full section height */
+        object-fit: cover;
+      }
+      .centered-text-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh; /* Full viewport height */
+        background-color: white;
+        margin-left: 600px;
+        margin-right: 600px;
+      }
+
+      .centered-text-section h1 {
+        font-size: 150px;
+        text-align: center;
+        font-family: "Oswald", sans-serif;
+        font-weight: normal;
+      }
+
+      .grid-section {
+        padding: 50px 20px;
+        background-color: white;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+        align-items: center;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+
+      .grid-item {
+        text-align: center;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .grid-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .grid-item p {
+        font-size: 35px;
+        color: #333;
+        line-height: 1.5;
+        padding: 0 15px;
+      }
+      .row-container {
+        width: 100%;
+        margin-bottom: 40px; 
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 200px; 
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .box img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover; 
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        position: relative;
+        padding-bottom: 5px;
+        display: inline-block;
+      }
+
+      h3::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: black;
+        margin-top: 5px;
+      }
+
+      /* Call-to-Action Section */
+      .cta-section {
+        background-color: #000; 
+        color: #fff; 
+        text-align: center;
+        padding: 160px 20px; 
+        margin-top: 50px; 
+      }
+
+      .cta-section h2 {
+        font-size: 65px;
+        font-family: "Oswald", sans-serif;
+        margin-bottom: 60px;
+        margin-left: 780px;
+        margin-right: 780px;
+      }
+
+      .cta-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 18px 45px;
+        font-size: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+     
+      @media (max-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(6, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .custom-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .custom-text {
+          width: 100%;
+          text-align: center;
+        }
+
+        .custom-images {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .custom-images .custom-img {
+          width: 100%;
+          margin-bottom: 20px;
+          height: auto;
+        }
+      }
+
+    
+      @media (max-width: 768px) {
+        .content-left h1 {
+          font-size: 48px;
+        }
+
+        .stat h2 {
+          font-size: 32px;
+        }
+
+        .community-section h2 {
+          font-size: 48px;
+        }
+
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar">
+      <div class="logo">
+        <img src="icons/logo.png" alt="Logo" class="logo-img" />
+        <span class="logo-text">Office</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Membership</a></li>
+        <li><a href="#">Feature</a></li>
+        <li><a href="#">Location</a></li>
+      </ul>
+      <div class="book-now">
+        <a href="#" class="book-now-btn">Book Now</a>
+      </div>
+      <div class="menu-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <section class="future-office-section">
+      <div class="content-left">
+        <h1>Your Future Office</h1>
+        <p>Upgrade your work space, reduce your stress</p>
+        <div class="stats">
+          <div class="stat">
+            <h2>40</h2>
+            <p>Rooms Available</p>
+          </div>
+          <div class="stat">
+            <h2>54+</h2>
+            <p>Reading Resource</p>
+          </div>
+          <div class="stat">
+            <h2>77</h2>
+            <p>Device Setup</p>
+          </div>
+          <div class="stat">
+            <h2>24</h2>
+            <p>Hour Open</p>
+          </div>
+        </div>
+      </div>
+      <div class="content-right">
+        <img src="grid image/office-image.jpg" alt="Office Image" class="office-img" />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a href="#" class="explore-link">Explore -----</a>
+    </footer>
+
+    
+    <section class="community-section">
+      <h2>A Community</h2>
+      <h2>At Work</h2>
+      <div class="community-cards">
+        <div class="card">
+          <h3>100+ Renowned Companies</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+          <a href="#" class="learn-more">Learn More -----</a>
+        </div>
+        <div class="card">
+          <h3>3 Buildings Available For Co.</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+          <a href="#" class="learn-more">Learn More -----</a>
+        </div>
+        <div class="card">
+          <h3>10+ Conference Rooms</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+          <a href="#" class="learn-more">Learn More -----</a>
+        </div>
+      </div>
+    </section>
+    <section class="custom-section">
+      <div class="custom-text">
+        <h1>A Space To Make Your Own</h1>
+        <p>
+          Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do
+          Eiusmod Tempor Incididunt Ut Labore Et.
+        </p>
+        <button class="explore-btn">Explore</button>
+      </div>
+      <div class="custom-images">
+        <img src="grid image/3_image1.png" alt="Office 1" class="custom-img" />
+        <img src="grid image/3_image2.png" alt="Office 2" class="custom-img" />
+      </div>
+    </section>
+    <section class="centered-text-section">
+      <h1>Space To Suit Your Needs</h1>
+    </section>
+    <section class="grid-section">
+      <div class="grid-container">
+        
+        <div class="grid-item">
+          <img
+            src="grid image/office-image.jpg"
+            alt="Office Image 1"
+            class="grid-img"
+          />
+        </div>
+       
+        <div class="grid-item">
+          <p>Ready To Move</p>
+        </div>
+        
+        <div class="grid-item">
+          <img
+            src="grid image/Luxury-office-trends.jpg"
+            alt="Office Image 2"
+            class="grid-img"
+          />
+        </div>
+        
+        <div class="grid-item">
+          <p>One And Two Year Lease Available</p>
+        </div>
+        
+        <div class="grid-item">
+          <img
+            src="grid image/grid2.jpeg"
+            alt="Office Image 3"
+            class="grid-img"
+          />
+        </div>
+        
+        <div class="grid-item">
+          <p>One Time 30+ People Work Space</p>
+        </div>
+      </div>
+    </section>
+    <section class="lease-section">
+      <div class="lease-left">
+        <h2>Included In Your Office Lease</h2>
+      </div>
+      <div class="lease-right">
+        <p>
+          Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do
+          Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+        </p>
+      </div>
+    </section>
+    <section class="features-section">
+      <div class="feature-block">
+        <div class="feature-column">
+          <div class="feature-icon-text">
+            <img src="/icons/icon1.png" alt="Icon 1" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+          <div class="feature-icon-text">
+            <img src="/icons/icon3.png" alt="Icon 3" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+          <div class="feature-icon-text">
+            <img src="/icons/icon5.png" alt="Icon 5" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="feature-column">
+          <div class="feature-icon-text">
+            <img src="/icons/icon2.png" alt="Icon 2" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+          <div class="feature-icon-text">
+            <img src="/icons/icon4.png" alt="Icon 4" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+          <div class="feature-icon-text">
+            <img src="/icons/icon6.png" alt="Icon 6" />
+            <p>
+              Duis Aute Irure Dolor In Reprehenderit In Voluptate Velit Esse
+              Cillum Dolore Eu Fugiat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-section">
+      <h2>Ready To Visit In Person?</h2>
+      <p>
+        Excepteur Sint Occaecat Cupidatat Non Proident, Sunt In Culpa Qui
+        Officia Deserunt Mollit
+      </p>
+      <button class="cta-button">Book A Tour</button>
+    </section>
+    <section class="see-space-section">
+      <h2>See Your Working Space</h2>
+    </section>
+    <div class="row-container">
+      <div class="row row2">
+        <div class="box">
+          <img src="grid image/Luxury-office-trends.jpg" alt="Meating Space" />
+        </div>
+        <div class="box">
+          <h3>Meating Space</h3>
+        </div>
+        <div class="box">
+          <img src="grid image/office-image.jpg" alt="Main Office" />
+        </div>
+        <div class="box">
+          <h3>Main Office</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-container">
+      <div class="row row2">
+        <div class="box">
+          <img src="grid image/office-image.jpg" alt="Consultant Space" />
+        </div>
+        <div class="box">
+          <h3>Consultant Space</h3>
+        </div>
+        <div class="box">
+          <img src="grid image/Luxury-office-trends.jpg" alt="Work Space" />
+        </div>
+        <div class="box">
+          <h3>Work Space</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
